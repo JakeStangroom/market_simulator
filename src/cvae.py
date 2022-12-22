@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn import utils
 from tqdm.auto import tqdm
 import tensorflow as tf
+# import tensorflow.compat.v1 as tf
+# tf.disable_v2_behavior()
 
 class CVAE(object):
     """Conditional Variational Auto Encoder (CVAE)."""

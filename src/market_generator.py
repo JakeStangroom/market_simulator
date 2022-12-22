@@ -1,9 +1,19 @@
 import datetime
 import numpy as np
-import pandas_datareader as pdr
+
 from esig import tosig
 from tqdm.auto import tqdm
 from sklearn.preprocessing import MinMaxScaler
+
+TEMP_PDR_FIX = True
+
+if TEMP_PDR_FIX:
+    from pandas_datareader import data as pdr
+    import yfinance as yf
+
+    yf.pdr_override()
+else:
+    import pandas_datareader as pdr
 
 from utils.leadlag import leadlag
 from cvae import CVAE
