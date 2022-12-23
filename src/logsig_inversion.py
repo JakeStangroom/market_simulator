@@ -99,9 +99,9 @@ class Population:
         return new_generation[0].loss(sig, order)
 
 def train(sig, order, n_iterations, n_organisms, n_points, pip, n_pips,
-          top_p=0.1, mutation_prob=0.1):
+          top_p=0.1, mutation_prob=0.1, verbose = True):
     population = Population(n_organisms, n_points, pip, n_pips)
-    pbar = tqdm(range(n_iterations))
+    pbar = tqdm(range(n_iterations), disable = (not verbose))
 
     for _ in pbar:
         loss = population.evolve(sig, p=top_p, order=order, mutation_prob=mutation_prob)
